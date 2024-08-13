@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <script>
+        function perguntar() {
+            let resposta = confirm("Você aceita sair comigo?");
+            if (resposta) {
+                alert("Parabéns! Ótima escolha. 😘");
+            } else {
+                alert("Erro! Resposta não aceita.");
+                document.body.innerHTML = `
+                    <h1>Vamos para sua segunda chance</h1>
+                    <p>A página será recarregada em 5 segundos...</p>
+                `;
+                setTimeout(() => {
+                    location.reload();
+                }, 5000); // Recarrega a página após 5 segundos
+            }
+        }
+    </script>
+</head>
+<body onload="perguntar()">
+    <h1>Convite</h1>
+    <p>Você será perguntado se aceita sair comigo ao carregar a página.</p>
+</body>
+</html>
